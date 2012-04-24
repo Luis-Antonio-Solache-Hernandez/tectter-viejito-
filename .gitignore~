@@ -4,4 +4,4 @@ include
 build
 *.pyc
 .Python
-.sqlite3
+.sqlite
