@@ -4,11 +4,11 @@ from django.contrib.auth.models import User
 
 class Perfil(models.Model):
     user = models.OneToOneField(User)
-    image = models.ImageField(upload_to='img')
-    birth_date = models.DateTimeField(auto_now_add=True)
-    city = models.CharField(max_length=50)
-    public = models.BooleanField()
-    biography = models.TextField(max_length=50)
+    image = models.ImageField(upload_to='img', default='img/User.png')
+    birth_date = models.DateField()
+    city = models.CharField(max_length=50, blank=True, null=True)
+    public = models.BooleanField(default=True)
+    biography = models.TextField(max_length=50, blank=True, null=True)
     friend = models.ManyToManyField('self', blank=True)
 
 
